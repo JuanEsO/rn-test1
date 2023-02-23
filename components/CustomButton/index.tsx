@@ -3,7 +3,7 @@ import {TouchableOpacity, StyleSheet} from 'react-native';
 
 function CustomButton({onPress, children, color}) {
   return (
-    <TouchableOpacity onPress={onPress} style={[styles.button, styles[color]]}>
+    <TouchableOpacity onPress={onPress} style={[styles.button, styles.red]}>
       {children}
     </TouchableOpacity>
   );
@@ -11,10 +11,10 @@ function CustomButton({onPress, children, color}) {
 
 const styles = StyleSheet.create({
   button: {
-    width: '90%',
     margin: 'auto',
     marginTop: 20,
-    padding: 20,
+    padding: 10,
+    paddingHorizontal: 60,
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,

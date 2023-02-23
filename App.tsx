@@ -12,31 +12,21 @@ import {
   StatusBar,
   useColorScheme,
   View,
+  Text,
 } from 'react-native';
-import Home from './src/Screens/Home';
-import {ColorProvider} from './src/Context/ColorContext';
+import Home from './Screens/Home';
+import {ColorProvider} from './Context/ColorContext';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
     <ColorProvider>
-      <SafeAreaView style={backgroundStyle}>
-        <StatusBar
-          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-          backgroundColor={backgroundStyle.backgroundColor}
-        />
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={backgroundStyle}>
-          <View
-            style={{
-              backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            }}>
+      <SafeAreaView>
+        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+        <ScrollView contentInsetAdjustmentBehavior="automatic">
+          <View>
+            <Text>Prueba Básica</Text>
             <Home />
           </View>
         </ScrollView>

@@ -1,11 +1,11 @@
 import React, {useContext} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import Modal from 'react-native-modal';
-import Button from './CustomButton';
-import {ColorContext} from './Context/ColorContext';
+import Button from '../CustomButton';
+import {ColorContext} from '../../Context/ColorContext';
 
 function ModalComponent({isVisible, onClose}) {
-  const [color, setColor] = useContext(ColorContext);
+  const {color, setColor} = useContext(ColorContext);
   return (
     <Modal
       isVisible={isVisible}
@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginVertical: 20,
+    color: 'black',
   },
   buttonText: {
     color: 'white',
